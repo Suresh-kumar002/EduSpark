@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Dark background background like the screenshot */
+  background: #050505; 
+}
+
+.container {
+  position: relative;
+  width: 850px;
+  height: 550px;
+  /* Darker surface for the form */
+  background: #0f0f12; 
+  margin: 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.container p {
+  font-size: 14.5px;
+  margin: 15px 0;
+  color: #ccc;
+}
+
+.form-box {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #0f0f12;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 40px;
+  z-index: 1;
+  transition: 0.6s ease-in-out 1.2s, visibility 0s 1s;
+}
+
+.container.active .form-box {
+  right: 50%;
+}
+
+.form-box.register {
+  visibility: hidden;
+}
+
+.container.active .form-box.register {
+  visibility: visible;
+}
+
+.input-box {
+  position: relative;
+  margin: 25px 0;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 13px 50px 13px 20px;
+  background: #1a1a20; /* Darker inputs */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.input-box input:focus {
+  border-color: #c56cf0; /* Pink/Purple glow on focus */
+  box-shadow: 0 0 10px rgba(197, 108, 240, 0.2);
+}
+
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #c56cf0;
+}
+
+.btn {
+  width: 100%;
+  height: 48px;
+  /* Gradient like the "Explore Tools" button */
+  background: linear-gradient(45deg, #5dade2, #c56cf0); 
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(197, 108, 240, 0.4);
+}
+
+.social-icons a {
+  display: inline-flex;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 24px;
+  color: #fff;
+  margin: 0 8px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #5dade2;
+}
+
+.toggle-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* The Animated Background Gradient */
+.toggle-box::before {
+  content: "";
+  position: absolute;
+  left: -250%;
+  width: 300%;
+  height: 100%;
+  /* Using the EduSpark theme colors: Blue and Pink/Purple */
+  background: linear-gradient(135deg, #c56cf0, #1747c9);
+  border-radius: 150px;
+  z-index: 2;
+  transition: 1.8s ease-in-out;
+}
+
+.container.active .toggle-box::before {
+  left: 50%;
+}
+
+.toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transition: 0.6s ease-in-out;
+  pointer-events: auto;
+}
+
+.toggle-panel .btn {
+  background: transparent;
+  border: 2px solid #fff;
+  width: 160px;
+}
+
+.toggle-panel .btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Rest of the layout logic remains same */
+.toggle-panel.toggle-left { left: 0; transition-delay: 1.2s; }
+.container.active .toggle-panel.toggle-left { left: -50%; transition-delay: 0.6s; }
+.toggle-panel.toggle-right { right: -50%; transition-delay: 0.6s; }
+.container.active .toggle-panel.toggle-right { right: 0; transition-delay: 1.2s; }
