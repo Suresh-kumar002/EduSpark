@@ -1,0 +1,47 @@
+body {
+    background: #0f172a;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    background: #1e293b;
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+input {
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.progress {
+    width: 100%;
+    background: #1e293b;
+    height: 20px;
+    margin-top: 20px;
+}
+
+#bar {
+    height: 100%;
+    width: 0%;
+    background: green;
+}

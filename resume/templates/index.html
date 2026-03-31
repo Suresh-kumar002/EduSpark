@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Matcher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Spark ATS Scanner</h1>
+
+    <input type="file" id="resume">
+    <textarea id="jobDesc" placeholder="Paste job description"></textarea>
+
+    <button onclick="analyze()">Analyze</button>
+
+    <h2 id="result"></h2>
+
+    <div class="progress">
+        <div id="bar"></div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
