@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Subject</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+    <h1>Select a Subject</h1>
+
+    <div id="subject-list"></div>
+
+    <button onclick="location.href='index.html'" class="btn">
+        ⬅ Back
+    </button>
+</div>
+
+<script>
+    const subjects = ["Data Science", "Cyber Security", "Visualization"];
+
+    const container = document.getElementById("subject-list");
+
+    subjects.forEach((sub)=>{
+        let btn = document.createElement("button");
+        btn.className = "btn";
+        btn.innerText = sub;
+
+        btn.onclick = ()=>{
+            localStorage.setItem("selectedSubject", sub);
+            location.href = "quiz.html";
+        };
+
+        container.appendChild(btn);
+    });
+</script>
+
+</body>
+</html>
