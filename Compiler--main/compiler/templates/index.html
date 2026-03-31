@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EduSpark CodeLab</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rancho&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="header">
+<div id="text">EduSpark CodeLab</div>
+<div class="theme-toggle">
+<i class="fas fa-moon"></i>
+</div>
+</header>
+
+
+<main class="main-content">
+
+<section class="code-editor">
+
+<div class="controls">
+
+<select id="language-select">
+<option value="" disabled selected>Select a Language</option>
+<option value="javascript">JavaScript</option>
+<option value="python">Python</option>
+<option value="java">Java</option>
+<option value="cpp">C++</option>
+<option value="csharp">C#</option>
+</select>
+
+<button id="run-button">
+<i class="fas fa-play"></i>
+Run Code
+</button>
+
+<button id="clear-button">
+<i class="fas fa-trash"></i>
+Clear
+</button>
+
+</div>
+
+
+<div class="line-numbers-container">
+
+<div class="line-numbers"></div>
+
+<textarea
+id="code-area"
+class="code-area"
+placeholder="// Write your code here..."
+spellcheck="false"></textarea>
+
+</div>
+
+</section>
+
+
+<section class="input-output">
+
+<div class="para-code">
+<i class="fas fa-info-circle"></i>
+<span>If your code takes input, add it in the above box before running.</span>
+</div>
+
+<div class="output-header">
+
+<span>Output</span>
+
+<button id="ai-generate">
+<i class="fas fa-magic"></i> AI Write
+</button>
+
+<button id="ai-explain">
+<i class="fas fa-lightbulb"></i> Code Clarity
+</button>
+
+<button id="ai-debug">
+<i class="fas fa-bug"></i> Find Bugs
+</button>
+
+<button id="ai-simulate">
+<i class="fas fa-robot"></i> Output Guess
+</button>
+
+<button id="copy-output">
+<i class="fas fa-copy"></i> Copy
+</button>
+
+</div>
+
+<textarea
+id="inputArea"
+class="input-area"
+placeholder="Enter input here..."></textarea>
+
+<textarea
+id="output-area"
+class="output-area"
+placeholder="Output will appear here..."
+readonly></textarea>
+
+</section>
+
+</main>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
